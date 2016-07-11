@@ -1744,4 +1744,8 @@ menu "Text editors and viewers"
 	source "package/vim/Config.in"
 endmenu
 
+menu "Synopsys USB IP Tools"
+	source "package/usb-scripts/Config.in"
+endmenu
+
 endmenu

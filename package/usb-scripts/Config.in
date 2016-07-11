@@ -1,0 +1,4 @@
+config BR2_PACKAGE_USB_SCRIPTS
+	bool "usb-scripts"
+	help
+	  Extra utilties for usb tests
