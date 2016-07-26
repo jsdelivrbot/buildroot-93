@@ -5,7 +5,7 @@
 ################################################################################
 
 USB_SCRIPTS_VERSION = master
-USB_SCRIPTS_SITE = http://nanobot/dwc/usb-scripts.git
+USB_SCRIPTS_SITE = http://nanobot/git/dwc/usb-scripts.git
 USB_SCRIPTS_SITE_METHOD = git
 USB_SCRIPTS_INSTALL_TARGET = YES
 USB_SCRIPTS_LICENSE = GPLv2+
