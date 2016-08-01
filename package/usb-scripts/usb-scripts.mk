@@ -16,7 +16,7 @@ define USB_SCRIPTS_BUILD_CMDS
 endef
 
 define USB_SCRIPTS_INSTALL_TARGET_CMDS
-	$(MAKE) -C $(@D) prefix=$(TARGET_DIR)/root libdir=/root/dwc_utils install
+	$(MAKE) -C $(@D) prefix=$(TARGET_DIR)/root/bin libdir=/root/bin/dwc_utils install
 endef
 
 $(eval $(generic-package))
