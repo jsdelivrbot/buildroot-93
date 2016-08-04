@@ -4,11 +4,10 @@
 #
 ################################################################################
 
-USB_SCRIPTS_VERSION = master
-USB_SCRIPTS_SITE = http://nanobot/git/dwc/usb-scripts.git
-USB_SCRIPTS_SITE_METHOD = git
+USB_SCRIPTS_SOURCE = usb-scripts.tar.gz
+USB_SCRIPTS_SITE = http://nanobot/usb-scripts/latest
 USB_SCRIPTS_INSTALL_TARGET = YES
-USB_SCRIPTS_LICENSE = GPLv2+
+USB_SCRIPTS_LICENSE = BSD
 USB_SCRIPTS_LICENSE_FILES = COPYING
 
 define USB_SCRIPTS_BUILD_CMDS
