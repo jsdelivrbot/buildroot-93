@@ -1,0 +1,32 @@
+From 53f72550de832fae90376309e99472f278f91d10 Mon Sep 17 00:00:00 2001
+Message-Id: <53f72550de832fae90376309e99472f278f91d10.1473286621.git.thinhn@synopsys.com>
+From: Thinh Nguyen <thinhn@synopsys.com>
+Date: Wed, 7 Sep 2016 15:15:52 -0700
+Subject: [PATCH] updated
+
+Signed-off-by: Thinh Nguyen <thinhn@synopsys.com>
+---
+ config.mk | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arc/config.mk b/arch/arc/config.mk
+index 7c974f0..8916a59 100644
+--- a/arch/arc/config.mk
++++ b/arch/arc/config.mk
+@@ -31,11 +31,11 @@ CONFIG_MMU = 1
+ endif
+ 
+ ifdef CONFIG_CPU_ARC750D
+-PLATFORM_CPPFLAGS += -marc700
++PLATFORM_CPPFLAGS += -mARC700
+ endif
+ 
+ ifdef CONFIG_CPU_ARC770D
+-PLATFORM_CPPFLAGS += -marc700 -mlock -mswape
++PLATFORM_CPPFLAGS += -mARC700 -mlock -mswape
+ endif
+ 
+ ifdef CONFIG_CPU_ARCEM6
+-- 
+2.7.4
+
