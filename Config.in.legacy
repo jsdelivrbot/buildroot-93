@@ -2335,6 +2335,11 @@ config BR2_BFIN_FLAT
 	select BR2_BINFMT_FLAT
 	select BR2_LEGACY
 
+config BR2_SYNOPSYS_USB
+       bool "Use ARC 2015.12 toolchain"
+       help
+         Select ARC toolchain version 2015.12 for binutils and gcc
+
 endmenu
 
 endif # !SKIP_LEGACY
