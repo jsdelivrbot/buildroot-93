@@ -12,7 +12,7 @@ BR2_LINUX_KERNEL=y
 BR2_LINUX_KERNEL_PATCH="board/synopsys/axs10x-usb3/patches/linux-kernel"
 BR2_LINUX_KERNEL_CUSTOM_GIT=y
 BR2_LINUX_KERNEL_CUSTOM_REPO_URL="https://github.com/foss-for-synopsys-dwc-arc-processors/linux"
-BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION="db504ccc004330e5387e8a4f2ebe25c74baba6e7"
+BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION="db3646c931c3cea5741d7ed76ef7a56f3c8bc7e0"
 BR2_LINUX_KERNEL_USE_CUSTOM_CONFIG=y
 BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE="board/synopsys/axs10x-usb3/axs101_usb.config"
 
