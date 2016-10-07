@@ -1,0 +1,44 @@
+From f29a72cd5ee0512562f451e0ad53738c6d51d930 Mon Sep 17 00:00:00 2001
+Message-Id: <f29a72cd5ee0512562f451e0ad53738c6d51d930.1464188586.git.jpinto@synopsys.com>
+In-Reply-To: <937427def856e507a3e042fac4eb8e4e60fcae0a.1464188586.git.jpinto@synopsys.com>
+References: <937427def856e507a3e042fac4eb8e4e60fcae0a.1464188586.git.jpinto@synopsys.com>
+From: Joao Pinto <jpinto@synopsys.com>
+Date: Wed, 25 May 2016 16:00:29 +0100
+Subject: [PATCH 4/5] dwc3 added to device tree
+
+This patch adds dwc3 to the device tree.
+
+Signed-off-by: Joao Pinto <jpinto@synopsys.com>
+---
+ arch/arm64/boot/dts/arm/juno-base.dtsi | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/arm/juno-base.dtsi b/arch/arm64/boot/dts/arm/juno-base.dtsi
+index 94d160a..1602ae9 100644
+--- a/arch/arm64/boot/dts/arm/juno-base.dtsi
++++ b/arch/arm64/boot/dts/arm/juno-base.dtsi
+@@ -284,6 +284,21 @@
+ 		clocks = <&soc_usb48mhz>;
+ 	};
+ 
++	dwc3@60000000 {
++		compatible = "snps,dwc3";
++		reg = < 0x0 0x60000000 0x0 0x10000 >;
++		interrupts = <GIC_SPI 168 IRQ_TYPE_LEVEL_HIGH>;
++		usb-phy = <&usb2_phy &usb3_phy>;
++	};
++
++	usb2_phy: usb2_phy {
++		compatible = "usb-nop-xceiv";
++	};
++
++	usb3_phy: usb3_phy {
++		compatible = "usb-nop-xceiv";
++	};
++
+ 	ehci@7ffc0000 {
+ 		compatible = "generic-ehci";
+ 		reg = <0x0 0x7ffc0000 0x0 0x10000>;
+-- 
+1.8.1.5
+
