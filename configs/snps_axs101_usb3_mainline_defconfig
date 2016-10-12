@@ -1,5 +1,7 @@
-# System
+# Architecture
 BR2_arcle=y
+
+# System
 BR2_TARGET_GENERIC_HOSTNAME="axs101"
 BR2_TARGET_GENERIC_ISSUE="Welcome to the ARC Software Development Platform"
 BR2_TARGET_ROOTFS_INITRAMFS=y
