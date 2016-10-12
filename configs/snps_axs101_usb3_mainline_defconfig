@@ -17,8 +17,8 @@ BR2_LINUX_KERNEL=y
 BR2_LINUX_KERNEL_CUSTOM_GIT=y
 BR2_LINUX_KERNEL_CUSTOM_REPO_URL="git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git"
 BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION="master"
-BR2_LINUX_KERNEL_USE_CUSTOM_CONFIG=y
-BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE="board/synopsys/axs10x-usb3/axs101_usb_mainline.config"
+BR2_LINUX_KERNEL_DEFCONFIG="axs101"
+BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="board/synopsys/axs10x-usb3/axs101_usb.fragment"
 
 # Toolchain Options
 BR2_TOOLCHAIN_BUILDROOT_INET_RPC=y
