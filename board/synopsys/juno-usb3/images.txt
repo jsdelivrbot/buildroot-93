@@ -1,0 +1,42 @@
+TITLE: Versatile Express Images Configuration File
+
+[IMAGES]
+TOTALIMAGES: 6                   ;Number of Images (Max: 32)
+
+NOR0UPDATE: AUTO                 ;Image Update:NONE/AUTO/FORCE
+NOR0ADDRESS: 0x00000000          ;Image Flash Address
+NOR0FILE: \SOFTWARE\fip.bin      ;Image File Name
+NOR0LOAD: 00000000               ;Image Load Address
+NOR0ENTRY: 00000000              ;Image Entry Point
+
+NOR1UPDATE: AUTO                 ;Image Update:NONE/AUTO/FORCE
+NOR1ADDRESS: 0x03EC0000          ;Image Flash Address
+NOR1FILE: \SOFTWARE\bl1.bin      ;Image File Name
+NOR1LOAD: 00000000               ;Image Load Address
+NOR1ENTRY: 00000000              ;Image Entry Point
+
+NOR2UPDATE: AUTO                 ;Image Update:NONE/AUTO/FORCE
+NOR2ADDRESS: 0x00500000          ;Image Flash Address
+NOR2FILE: \SOFTWARE\Image        ;Image File Name
+NOR2NAME: norkern                ;Rename kernel to norkern
+NOR2LOAD: 00000000               ;Image Load Address
+NOR2ENTRY: 00000000              ;Image Entry Point
+
+NOR3UPDATE: AUTO                 ;Image Update:NONE/AUTO/FORCE
+NOR3ADDRESS: 0x02000000          ;Image Flash Address
+NOR3FILE: \SOFTWARE\juno-r2.dtb  ;Image File Name
+NOR3NAME: board.dtb              ;Specify target filename to preserve file extension
+NOR3LOAD: 00000000               ;Image Load Address
+NOR3ENTRY: 00000000              ;Image Entry Point
+
+NOR4UPDATE: AUTO                 ;Image Update:NONE/AUTO/FORCE
+NOR4ADDRESS: 0x025C0000          ;Image Flash Address
+NOR4FILE: \SOFTWARE\hdlcdclk.dat ;Image File Name
+NOR4LOAD: 00000000               ;Image Load Address
+NOR4ENTRY: 00000000              ;Image Entry Point
+
+NOR5UPDATE: AUTO                 ;Image Update:NONE/AUTO/FORCE
+NOR5ADDRESS: 0x03E40000          ;Image Flash Address
+NOR5FILE: \SOFTWARE\bl0.bin      ;Image File Name
+NOR5LOAD: 00000000               ;Image Load Address
+NOR5ENTRY: 00000000              ;Image Entry Point
