@@ -1,9 +1,15 @@
 #!/bin/sh
 
+OPTION=-n
+if mount | grep -q 'on / type nfs'; then
+	INTERFACE=`/sbin/ifconfig | grep -m 1 ^eth | awk '{print $1}'`
+	OPTION="$OPTION -I $INTERFACE"
+fi
+
 case "$1" in
 	start)
 		printf "Starting connman ... "
-		start-stop-daemon -S -q -m -b -p /var/run/connmand.pid --exec /usr/sbin/connmand -- -n
+		start-stop-daemon -S -q -m -b -p /var/run/connmand.pid --exec /usr/sbin/connmand -- $OPTION
 		echo "done."
 		;;
 	stop)
