@@ -9,6 +9,7 @@ BR2_TARGET_ROOTFS_INITRAMFS=y
 BR2_GLOBAL_PATCH_DIR="custom-packages"
 BR2_SYNOPSYS_USB=y
 BR2_ROOTFS_OVERLAY="board/synopsys/common-usb/rootfs-overlay"
+BR2_ROOTFS_POST_BUILD_SCRIPT="board/synopsys/common-usb/fstab-post-build.sh"
 
 # Linux headers same as kernel, a 3.18 series
 BR2_KERNEL_HEADERS_3_18=y
