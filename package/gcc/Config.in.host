@@ -102,7 +102,7 @@ config BR2_GCC_SUPPORTS_FINEGRAINEDMTUNE
 
 config BR2_GCC_VERSION
 	string
-	default "arc-2016.03" if BR2_SYNOPSYS_USB && BR2_arc
+	default "arc-2015.12" if BR2_SYNOPSYS_USB && BR2_arc
 	default "4.7.4"     if BR2_GCC_VERSION_4_7_X
 	default "4.8.5"     if BR2_GCC_VERSION_4_8_X
 	default "4.9.4"     if BR2_GCC_VERSION_4_9_X
