@@ -2,7 +2,7 @@
 
 # Mount debugfs by adding it to fstab
 
-DEBUGFS='debugfs\t/sys/kernel/debug\tdebugfs\tdefaults\t0\t0'
+DEBUGFS='debugfs /sys/kernel/debug debugfs defaults 0 0'
 if ! grep -q debugfs ${TARGET_DIR}/etc/fstab; then
-        echo -e $DEBUGFS >> ${TARGET_DIR}/etc/fstab
+        echo $DEBUGFS >> ${TARGET_DIR}/etc/fstab
 fi
