@@ -4,7 +4,7 @@ set -e
 
 # Create an image with a partition containing the rootfs
 
-GENIMAGE_ROOTFS_CFG="board/synopsys/juno-usb3/genimage_rootfs.cfg"
+GENIMAGE_ROOTFS_CFG="board/synopsys/usb/juno/genimage_rootfs.cfg"
 GENIMAGE_TMP="${BUILD_DIR}/genimage.tmp"
 
 # Clean previous build

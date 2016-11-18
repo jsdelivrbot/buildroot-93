@@ -2,8 +2,8 @@
 
 set -e
 
-JUNO_IMAGES_CFG="board/synopsys/juno-usb3/images.txt"
-GENIMAGE_CFG="board/synopsys/juno-usb3/genimage.cfg"
+JUNO_IMAGES_CFG="board/synopsys/usb/juno/images.txt"
+GENIMAGE_CFG="board/synopsys/usb/juno/genimage.cfg"
 GENIMAGE_TMP="${BUILD_DIR}/genimage.tmp"
 VEXPRESS_DIR="${STAGING_DIR}/usr/share/vexpress-firmware"
 SD_TMP_DIR="${BUILD_DIR}/sd"
