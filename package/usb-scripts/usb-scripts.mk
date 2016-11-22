@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-USB_SCRIPTS_VERSION = master
+USB_SCRIPTS_VERSION = $(call qstrip,$(BR2_PACKAGE_USB_SCRIPTS_VERSION))
 USB_SCRIPTS_SOURCE = $(USB_SCRIPTS_VERSION).tar.gz
 USB_SCRIPTS_SITE = https://github.com/synopsys-usb/usb-scripts/archive
 USB_SCRIPTS_INSTALL_TARGET = YES
