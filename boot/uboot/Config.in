@@ -123,6 +123,12 @@ config BR2_TARGET_UBOOT_BOARD_DEFCONFIG
 	  Name of the board for which U-Boot should be built, without
 	  the _defconfig suffix.
 
+config BR2_TARGET_UBOOT_CONFIG_FRAGMENT_FILES
+	string "Additional u-boot configuration fragment files"
+	help
+	  A space-separated list of configuration fragment files,
+	  that will be merged to the main u-boot configuration file.
+
 config BR2_TARGET_UBOOT_CUSTOM_CONFIG_FILE
 	string "Configuration file path"
 	depends on BR2_TARGET_UBOOT_USE_CUSTOM_CONFIG
