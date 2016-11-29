@@ -1,0 +1,63 @@
+From 80f7c8eb10e1fff8e2bc119e343ad741e4fb631f Mon Sep 17 00:00:00 2001
+Message-Id: <80f7c8eb10e1fff8e2bc119e343ad741e4fb631f.1480466899.git.thinhn@synopsys.com>
+From: Thinh Nguyen <thinhn@synopsys.com>
+Date: Wed, 23 Nov 2016 15:26:36 -0800
+Subject: [PATCH] vexpress64: Add option to load uEnv.txt
+
+Load uEnv.txt from usb interface and run uenvcmd if available.
+
+Signed-off-by: Thinh Nguyen <thinhn@synopsys.com>
+---
+ include/configs/vexpress_aemv8a.h | 22 +++++++++++++++++++++-
+ 1 file changed, 21 insertions(+), 1 deletion(-)
+
+diff --git a/include/configs/vexpress_aemv8a.h b/include/configs/vexpress_aemv8a.h
+index 133041b..bd40697 100644
+--- a/include/configs/vexpress_aemv8a.h
++++ b/include/configs/vexpress_aemv8a.h
+@@ -197,6 +197,11 @@
+ 				"fdt_addr=0x83000000\0" \
+ 				"fdt_high=0xffffffffffffffff\0" \
+ 				"initrd_high=0xffffffffffffffff\0" \
++				"uenv_addr=0x90000000\0" \
++				"bootenv=uEnv.txt\0" \
++				"loadbootenv=fatload usb 0:1 ${uenv_addr} ${bootenv}\0" \
++				"importbootenv=echo Import environent...;" \
++				"  env import -t -r ${uenv_addr} ${filesize}\0"
+ 
+ /* Assume we boot with root on the first partition of a USB stick */
+ #define CONFIG_BOOTARGS		"console=ttyAMA0,115200n8 " \
+@@ -208,7 +213,7 @@
+ 				"loglevel=9"
+ 
+ /* Copy the kernel and FDT to DRAM memory and boot */
+-#define CONFIG_BOOTCOMMAND	"afs load ${kernel_name} ${kernel_addr} ; " \
++#define CONFIG_BOOTCOMMAND_AFS  "afs load ${kernel_name} ${kernel_addr} ; " \
+ 				"if test $? -eq 1; then "\
+ 				"  echo Loading ${kernel_alt_name} instead of "\
+ 				"${kernel_name}; "\
+@@ -228,6 +233,21 @@
+ 				"fi ; " \
+ 				"booti ${kernel_addr} ${initrd_param} ${fdt_addr}"
+ 
++/* Load environments from uEnv.txt and run uenvcmd */
++#define CONFIG_BOOTCOMMAND	"usb reset; " \
++				"if run loadbootenv; then " \
++				   "echo Loaded environment from ${bootenv};" \
++				   "run importbootenv;" \
++				   "if test -n $uenvcmd; then " \
++				      "echo Running uenvcmd ...;" \
++				      "run uenvcmd;" \
++				   "else " \
++				       CONFIG_BOOTCOMMAND_AFS \
++				   "; fi; " \
++				"else " \
++				   CONFIG_BOOTCOMMAND_AFS \
++				"; fi" \
++
+ #define CONFIG_BOOTDELAY		1
+ 
+ #elif CONFIG_TARGET_VEXPRESS64_BASE_FVP
+-- 
+2.10.0
+
