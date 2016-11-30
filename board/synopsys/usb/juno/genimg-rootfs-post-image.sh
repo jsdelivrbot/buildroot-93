@@ -9,6 +9,7 @@ GENIMAGE_TMP="${BUILD_DIR}/genimage.tmp"
 
 # Clean previous build
 rm -rf $GENIMAGE_TMP
+date > $BINARIES_DIR/.build
 
 # Create image for rootfs
 genimage \
@@ -18,6 +19,8 @@ genimage \
     --outputpath $BINARIES_DIR \
     --config $GENIMAGE_ROOTFS_CFG
 
+rm -f $BINARIES_DIR/.build
+rm -f $BINARIES_DIR/data.vfat
 rm -f $BINARIES_DIR/rootfs.ext2
 rm -f $BINARIES_DIR/rootfs.ext4
 gzip -f $BINARIES_DIR/rootfs.img
