@@ -10,6 +10,7 @@ BR2_GLOBAL_PATCH_DIR="custom-packages"
 BR2_SYNOPSYS_USB=y
 BR2_ROOTFS_OVERLAY="board/synopsys/usb/common/rootfs-overlay"
 BR2_ROOTFS_POST_BUILD_SCRIPT="board/synopsys/usb/common/fstab-post-build.sh board/synopsys/usb/common/network-post-build.sh"
+BR2_ROOTFS_DEVICE_CREATION_DYNAMIC_EUDEV=y
 
 # Linux headers same as kernel, a 3.18 series
 BR2_KERNEL_HEADERS_3_18=y
@@ -28,6 +29,7 @@ BR2_TOOLCHAIN_BUILDROOT_WCHAR=y
 BR2_TOOLCHAIN_BUILDROOT_CXX=y
 
 # Packages
+BR2_PACKAGE_USBUTILS=y
 BR2_PACKAGE_MPLAYER=y
 BR2_PACKAGE_NFS_UTILS=y
 BR2_PACKAGE_PERL=y
